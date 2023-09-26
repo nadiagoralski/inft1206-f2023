@@ -51,7 +51,7 @@
     </table>
 
 
-    <table border="1" width="100%">
+    <table border="1" width="100%" bgcolor="green">
         <caption>Full Width Table</caption>
 
         <!-- row 1 -->
@@ -69,7 +69,7 @@
         <tr>
 
             <!-- row2, cell 2-->
-            <td>row2, cell 2</td>
+            <td bgcolor="red">row2, cell 2</td>
 
         </tr>
 
@@ -81,6 +81,27 @@
                 row 3, cell 1 
                 example with colspan
             </td>
+        </tr>
+    </table>
+
+
+    <table border="1" width="80%">
+        <caption>Sizing columns</caption>
+        <tr>
+            <!-- NOTE: make sure widths add up to 100% -->
+            <td width="20%">r1,c1 width 20%</td>
+            <td width="70%">r1,c2 width 70%</td>
+            <td width="10%">r1,c3 width 10%</td>
+        </tr>
+        <tr>
+            <td>r2,c1</td>
+            <td>r2,c2</td>
+            <td>r2,c3</td>
+        </tr> 
+        <tr>
+            <td>r3,c1</td>
+            <td>r3,c2</td>
+            <td>r3,c3</td>
         </tr>
     </table>
 </body>

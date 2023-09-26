@@ -44,7 +44,7 @@
         <tr>
             <!-- row3, cell 1 -->
             <td colspan="2">
-                row 3, cell 1 
+                row 3, cell 1
                 example with colspan
             </td>
         </tr>
@@ -74,11 +74,11 @@
         </tr>
 
 
-        <!-- row 3 --> 
+        <!-- row 3 -->
         <tr>
             <!-- row3, cell 1 -->
             <td colspan="2">
-                row 3, cell 1 
+                row 3, cell 1
                 example with colspan
             </td>
         </tr>
@@ -96,11 +96,47 @@
         <tr>
             <td>r2,c1</td>
             <td colspan="2" rowspan="2">r2,c2 colspan & rowspan example</td>
-        </tr> 
+        </tr>
         <tr>
             <td>r3,c1</td>
         </tr>
     </table>
+
+    <table border="1" width="100%">
+        <caption>Nesting tables - Parent Table</caption>
+        <!-- row 1 -->
+        <tr>
+
+            <td width="20%"></td>
+            <td width="80%">Header</td>
+
+
+
+        </tr>
+
+        <!-- row 2 -->
+        <tr>
+            <td></td>
+            <td>
+                <!-- nested <table> must be inside a <td> -->
+
+                <table border="2" width="50%">
+                    <caption>Nested table - Child Table</caption>
+                    <tr>
+                        <th>Cell Header 1</th>
+                        <th>Cell Header 2</th>
+                    </tr>
+                    <tr>
+                        <td>This is my nested table cell</td>
+                        <td>Row 2 Cell 2</td>
+                    </tr>
+
+                </table>    
+
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>

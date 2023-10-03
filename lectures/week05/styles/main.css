@@ -1,0 +1,14 @@
+h1 {
+    color: #FF3355;
+    text-align: center;
+}
+
+h2,
+h3 {
+    color: #22FFCC;
+    font-style: italic;
+}
+
+p {
+    font-family: Arial, Helvetica;
+}

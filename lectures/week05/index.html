@@ -11,16 +11,31 @@
 <head>
     <meta charset="utf-8" />
     <!-- External Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
 
-    
-    
+    <!-- Embedded Styles -->
+    <style type="text/css">
+       /* h1 and p will override the CSS rules in the external stylesheet above */
+        h1 {
+            font-family: Arial, Helvetica, Verdana;
+            color: blue;
+            text-align: center;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+
     <title>Week 4/5 - CSS</title>
 </head>
 
 <body>
     <h1>A Heading</h1>
     <h2>Another Heading</h2>
+    <p>My paragraph</p>
 </body>
 
 </html>

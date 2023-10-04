@@ -9,6 +9,37 @@ h3 {
     font-style: italic;
 }
 
+#subHeader {
+    font-style: normal;
+}
+
 p {
     font-family: Arial, Helvetica;
+}
+
+.big {
+    font-size: 120%; 
+}
+
+
+.halloween {
+    color: orange;
+    background-color: black;
+} 
+
+
+a.bold-link {
+    font-weight: bold;
+}
+
+a:link {
+    color: blueviolet;
+}
+
+a:hover {
+    font-size: 110%;
+}
+
+a:visited {
+    color: #29ff2262;
 }

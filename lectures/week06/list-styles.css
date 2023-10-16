@@ -28,3 +28,9 @@ p {
 ol {
     list-style-type: lower-roman;
 }
+
+ul {
+    /* default for ul is "disc" */
+    /* pumpkin emoji */
+    list-style-type: "\1F383";
+}

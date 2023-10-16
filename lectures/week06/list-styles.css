@@ -24,3 +24,7 @@ li,
 p {
   line-height: 1.5;
 }
+
+ol {
+    list-style-type: lower-roman;
+}

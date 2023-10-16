@@ -34,3 +34,17 @@ ul {
     /* pumpkin emoji */
     list-style-type: "\1F383";
 }
+
+ul.star {
+    padding-left: 2rem;
+    list-style-type: none;
+}
+
+ul.star li {
+    padding-left: 2rem;
+    background-image: url(star.svg);
+    background-position: 0 0;
+    background-size: 1.6rem 1.6rem;
+    background-repeat: no-repeat;
+    /* list-style-image: url('star.svg'); */
+}

@@ -1,5 +1,12 @@
 /* CSS comments with file name, author, date */
 
+@font-face {
+    font-family: "cicle";
+    src: url('../fonts/cicle_fina-webfont.woff');
+}
+
+
+
 html {
     font-size: 10px;
     margin: 0;
@@ -15,6 +22,7 @@ html {
   /* Typography */
   
   h1 {
+    font-family: 'cicle', Helvetica, sans-serif;
     font-size: 3.2rem;
   }
   

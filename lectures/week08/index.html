@@ -10,9 +10,10 @@
 <head>
     <meta charset="utf-8">
     <title> JavaScript Intro </title>
-    
+    <!-- External script -->
+    <script src="./scripts.js"></script> 
     <style>
-        button {
+        button, input[type="submit"] {
             font-family: "helvetica neue", helvetica, sans-serif;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -25,17 +26,38 @@
             padding: 3px 10px;
             cursor: pointer;
         }
+
+        .highlight {
+            background-color: yellow;
+        }
     </style>
+
+
 </head>
 
 <body>
     <h1> My Page Title </h1>
-    <button class="button">My Button</button>
 
+    <p><button class="button">My Button</button></p>
+
+    <h2>Number Guessing</h2>
+    <div class="form">
+        <label for="guessField"></label>
+        <input type="number" id="guessField" />
+
+        <input type="submit" id="submitGuess" />
+    </div>
+
+
+    <p>Text to highlight</p>
+    <button id="btnHighlight" class="button">Click to highlight text</button>
 
 </body>
 
+<!-- //embedded page JavaScript -->
 <script>
+
+    // select by element name
     const button = document.querySelector('button');
     console.log(button);
     button.addEventListener("click", updateName)
@@ -43,6 +65,22 @@
     function updateName() {
         const name = prompt("Enter a new name");
         button.textContent = `Player 1 : ${name}`;
+    }
+
+    const highlightBtn = document.querySelector('#btnHighlight');
+    highlightBtn.addEventListener("click", highlightText)
+
+    function highlightText() {
+        let paragraphList = document.querySelectorAll('p');
+        for(let i = 0; i < paragraphList.length; i++) {
+            console.log(paragraphList[i].classList);
+            // access the elements classList
+            // add to the classList by using .add('classname')
+            // in this case we add the 'highlight' class defined in our embedded CSS
+            paragraphList[i].classList.add('highlight');
+            // to remove a class we use .remove()
+            // paragraphList[i].classList.remove('highlight');
+        }
     }
 </script>
 </html>

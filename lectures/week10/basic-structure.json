@@ -1,0 +1,8 @@
+{
+    "propertyName1": "string property value",
+    "propertyName2": 123,
+    "propertyName3": [2, 4, 6, 8],
+    "propertyName4": {
+        "subPropertyName": "string sub property value"
+    }
+}

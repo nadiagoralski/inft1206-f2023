@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+
+  <body>
+
+      <header id="title">
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+        async function populate() {
+          // request URL that we want to grab data from
+          // our case points to an external JSON
+          const requestURL =
+            "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+          // create the request, by passing the URL into the new Request object
+          const request = new Request(requestURL);
+
+          // call fetch() with our request object created above
+          // WAIT for a response, and capture the response data
+          const response = await fetch(request);
+          // wait for response, and get JSON data
+          // i.e. our case the super hero data
+          // const superHeroes = await response.json();
+          // console.log(superHeroes)
+          const superHeroesText = await response.text();
+          console.log(superHeroesText);
+          
+          const superHeroes = JSON.parse(superHeroesText);
+          console.log(superHeroes);
+
+          const superHeroesStringified = JSON.stringify(superHeroes)
+          console.log(superHeroesStringified)
+          
+          // call function to populate header 
+          // i.e. the title Super Hero Squad
+          // subtitle hometown / year formed
+          populateHeader(superHeroes);
+
+          // // call function to populate hero info
+          // // i.e. names, details, etc about the heroes in the JSON
+          populateHeroes(superHeroes);
+        }
+
+        function populateHeader(obj) {
+          // select the header by the ID (added in id attribute from example)
+          const header = document.querySelector("#title");
+
+          // create h1 element for the big title 
+          const h1 = document.createElement("h1");
+          // set content to squadName from superhero object
+          h1.textContent = obj.squadName;
+
+          // create paragraph for subtitle with hometown amd year formed
+          const myParagraph = document.createElement("p");
+          myParagraph.textContent = `Hometown: ${obj.homeTown} // Year Formed: ${obj.formed}`
+
+          // append h1 and paragraph to header element
+          header.appendChild(h1);
+          header.appendChild(myParagraph);
+        }
+
+        function populateHeroes(obj) {
+            // select the section by element name
+            const section = document.querySelector("section");
+
+            // members array object 
+            const heroes = obj.members;
+
+            for (let hero of heroes) {
+              const heroArticle = document.createElement("article");
+              const h2 =  document.createElement("h2");
+              const paragraphIdentity =  document.createElement("p");
+              const paragraphAge =  document.createElement("p");
+              const paragraphSuperpowersLabel =  document.createElement("p");
+              const superpowerList =  document.createElement("ul");
+
+              h2.textContent = hero.name;
+              paragraphIdentity.textContent = `Secret Identity: ${hero.secretIdentity}`;
+              paragraphAge.textContent = `Age: ${hero.age}`;
+              paragraphSuperpowersLabel.textContent = "Superpowers:";
+
+
+              // get current hero's powers
+              const superPowers = hero.powers;
+              superPowers.forEach(power => {
+                const listItem = document.createElement("li");
+                listItem.textContent = power;
+                superpowerList.appendChild(listItem);
+              });
+
+              heroArticle.appendChild(h2);
+              heroArticle.appendChild(paragraphIdentity);
+              heroArticle.appendChild(paragraphAge);
+              heroArticle.appendChild(paragraphSuperpowersLabel);
+              heroArticle.appendChild(superpowerList);
+
+              section.appendChild(heroArticle);
+            }
+
+        }
+
+        // call populate
+        populate();
+      </script>
+  </body>
+</html>

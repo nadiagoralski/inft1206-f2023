@@ -1,0 +1,61 @@
+form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 500px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+form li + li {
+    margin-top: 1em;
+}
+
+label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+input, textarea {
+    /* make sure all text fields have the same font
+    by default, textareas have monospace
+    we want to override that for uniform look */
+    font: 1em sans-serif;
+
+    width: 400px;
+    box-sizing: border-box;
+
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+}
+
+.button {
+    padding: 100px
+}
+
+button {
+    margin-left: 0.5em;
+}
+
+input[type="datetime-local"] {
+   border-color: #000;
+   border-radius: 1em;
+   appearance: none;
+}

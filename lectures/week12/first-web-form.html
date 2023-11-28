@@ -1,0 +1,92 @@
+<!--  
+    first-web-form.html
+    Author: Nadia Goralski
+    Date: November 27 2023
+    Description: Your First Web Form 
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>My first web form</title>
+    <link rel="stylesheet" href="first-form-styles.css" type="text/css">
+
+</head>
+
+<body>
+    <form action="./my-handling-form-page.html" method="get">
+        <p>Required fields are followed by *.</p>
+        <ul>
+            <li>
+                <label for="name">Name: <span aria-label="required">*</span></label>
+                <input type="text" id="name" name="user_name" placeholder="Enter a username..." required  autofocus="true" />
+            </li>
+            <li>
+                <label for="password">Password: <span aria-label="required">*</span></label>
+                <input type="password" id="password" name="user_password" value="" maxlength="12" required />
+            </li>
+            <li>
+                <label for="email">Email: <span aria-label="required">*</span></label>
+                <input type="email" id="email" name="user_email" value="" required />
+            </li>
+            <li>
+                <label for="day">Select a Day: <span aria-label="required">*</span></label>
+                <input type="datetime-local" id="day" name="user_day" value="" required />
+            </li>
+            <li>
+                <label for="message">Message:</label>
+                <textarea id="message" name="user_msg"></textarea>
+            </li>
+            <li>
+                <label for="card_type">Card Type: <span aria-label="required">*</span></label>
+
+                <select id="card_type" name="user_card_type" required>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">MasterCard</option>
+                    <option value="amex">American Express</option>
+                </select>
+               
+            </li>
+            <li>
+                <label for="card_no">Card Number: <span aria-label="required">*</span></label>
+                <input type="tel" id="card_no" name="user_card_num" value="" placeholder="" required />
+
+            </li>
+            <li>
+                <label for="expiry">Expiry: <span aria-label="required">*</span></label>
+                <input type="text" id="expiry" name="user_expiry" value="" placeholder="MM/YY" required pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"/>
+
+            </li>
+            <li>
+                <label for="num">Select A number between 8 and 32: <span aria-label="required">*</span></label>
+                <input type="number" id="num" name="user_num" value="" min="8" max="32" required />
+            </li>
+            <li>
+                <label for="icon">Upload Avatar: </label>
+                <!-- <input type="image" id="icon" name="user_icon" value="" width="80" height="30"/>
+                http://foo.com?pos.x=123&pos.y=456 -->
+
+                <input type="file" name="icon" accept="image/**;capture=camera"  />
+                <!-- <input type="file" accept="video/**;capture=camcorder"  />
+                <input type="file"  accept="audio/**;capture=microphone"  /> -->
+            </li>
+            <li class="button">
+                <input type="submit" value="Submit Button" disabled /> <!-- Equivalent to  <button type="submit"> in terms of functionality -->
+                <button type="submit">Send your message</button>
+                <button type="reset">Reset</button> <!-- Reset does not always mean clear, resets form to initial state when page loads -->
+                <button type="button">Button</button> <!-- Does nothing, but we can give it actions in JavaScript -->
+            </li>
+        </ul>
+
+        <input type="hidden" value="mysecretfield" />
+
+    </form>
+
+    
+
+
+
+</body>
+</html>
